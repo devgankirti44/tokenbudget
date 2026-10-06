@@ -1,0 +1,13 @@
+# render.yaml
+services:
+  - type: web
+    name: tokenbudget
+    runtime: java
+    rootDir: app
+    buildCommand: ./mvnw clean package -Pproduction -DskipTests
+    startCommand: java -jar target/tokenbudget-1.0.0.jar
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: JAVA_VERSION
+        value: "21"
